@@ -69,7 +69,7 @@ def edit(id):
         modifyMovie.review = review
         db.session.commit()
         all_movie = Movie.query.all()
-        return render_template("index.html", movie_list=all_movie)
+        return redirect(url_for("home"))
     return render_template("edit.html", form=form, modifyMovie=modifyMovie)
 
 
