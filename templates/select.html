@@ -16,6 +16,11 @@
   <p>
     <a href="#"> MOVIE TITLE - MOVIE RELEASE DATE</a>
   </p>
+{% for i in range(results | length) %}
+  <p>
+  <a href="{{url_for('selected',id=i)}}">{{results[i]['original_title']}} {{results[i]['release_date']}}</a>
 
+</p>
+  {% endfor %}
 </div>
 {% endblock %}
